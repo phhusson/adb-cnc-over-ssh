@@ -61,9 +61,9 @@ func adbCheck(port uint32) bool {
 
 func handleConnect(port uint32) {
     // wait up to 10s for adb to appear
-    for i := 0; i < 100; i++ {
+    for i := 0; i < 5; i++ {
         adbConnect(port)
-        time.Sleep(100 * time.Millisecond)
+        time.Sleep(2 * time.Second)
         fmt.Println("Waiting connect to", port)
         if adbCheck(port) {
             break;
